@@ -11,7 +11,7 @@ const newFolder = path.join(__dirname, 'files-copy');
 fs.promises.readdir(oldFolder)
   .then(files => {
     files.forEach(file => {
-      let filePath =  path.join(oldFolder, file);
+      let filePath = path.join(oldFolder, file);
       let fileDir = path.join(newFolder, file);
       fs.copyFile(filePath, fileDir, (err) => {
         if (err) return console.log(err);
